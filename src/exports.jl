@@ -60,6 +60,10 @@ export
   Cxlayer!,
   randomquantumcircuit,
 
+# quantumalgorithms.jl
+  # Methods
+  qft,
+
 # statetomography,jl
   # Methods
   initializeQST,

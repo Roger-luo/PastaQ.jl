@@ -6,6 +6,7 @@ using Test
     "quantumgates.jl",
     "circuitops.jl",
     "quantumcircuit.jl",
+    "quantumalgorithms.jl",
     "statetomography.jl"
   )
     println("Running $filename")

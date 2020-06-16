@@ -109,6 +109,15 @@ function gate_Cz(T = ComplexF64)
            0 0 0 -1]
 end
 
+function gate_CRz(T = ComplexF64;ϕ::Float64)
+  return T[1 0 0 0;
+           0 1 0 0;
+           0 0 1 0;
+           0 0 0 exp(im*ϕ)]
+end
+
+
+
 # State preparation: |0> -> |+>
 function prep_Xp(T = ComplexF64)
   return gate_H(T)
@@ -162,21 +171,22 @@ end
 quantumgates = Dict{String, Function}()
 
 # Default gates
-quantumgates["I"]  = gate_I
-quantumgates["X"]  = gate_X
-quantumgates["Y"]  = gate_Y
-quantumgates["Z"]  = gate_Z
-quantumgates["H"]  = gate_H
-quantumgates["S"]  = gate_S
-quantumgates["T"]  = gate_T
-quantumgates["Rx"] = gate_Rx
-quantumgates["Ry"] = gate_Ry
-quantumgates["Rz"] = gate_Rz
-quantumgates["Rn"] = gate_Rn
-quantumgates["Sw"] = gate_Sw
-quantumgates["Cx"] = gate_Cx
-quantumgates["Cy"] = gate_Cy
-quantumgates["Cz"] = gate_Cz
+quantumgates["I"]   = gate_I
+quantumgates["X"]   = gate_X
+quantumgates["Y"]   = gate_Y
+quantumgates["Z"]   = gate_Z
+quantumgates["H"]   = gate_H
+quantumgates["S"]   = gate_S
+quantumgates["T"]   = gate_T
+quantumgates["Rx"]  = gate_Rx
+quantumgates["Ry"]  = gate_Ry
+quantumgates["Rz"]  = gate_Rz
+quantumgates["Rn"]  = gate_Rn
+quantumgates["Sw"]  = gate_Sw
+quantumgates["Cx"]  = gate_Cx
+quantumgates["Cy"]  = gate_Cy
+quantumgates["Cz"]  = gate_Cz
+quantumgates["CRz"] = gate_CRz
 
 quantumgates["pX+"] = prep_Xp
 quantumgates["pX-"] = prep_Xm
